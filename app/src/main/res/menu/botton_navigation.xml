@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/nav_motorcycle"
+        android:title="Break Down"
+        android:icon="@drawable/ic_break_down"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/nav_services"
+        android:title="Services"
+        android:icon="@drawable/ic_services"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/nav_more"
+        android:title="More"
+        android:icon="@drawable/ic_more_horiz"
+        tools:ignore="HardcodedText" />
+
+
+
+</menu>
