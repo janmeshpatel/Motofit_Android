@@ -4,9 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Motofit.iml" filepath="$PROJECT_DIR$/Motofit.iml" group="Motofit" />
       <module fileurl="file://$PROJECT_DIR$/app/Motofit-app.iml" filepath="$PROJECT_DIR$/app/Motofit-app.iml" group="Motofit/app" />
+      <module fileurl="file://$PROJECT_DIR$/Motofit_Android.iml" filepath="$PROJECT_DIR$/Motofit_Android.iml" group="Motofit_Android" />
+      <module fileurl="file://$PROJECT_DIR$/app/Motofit_Android-app.iml" filepath="$PROJECT_DIR$/app/Motofit_Android-app.iml" group="Motofit_Android/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/motofit-motofit_1-2.4_Beta.iml" filepath="$PROJECT_DIR$/motofit-motofit_1-2.4_Beta.iml" group="motofit-motofit_1-2.4_Beta" />
-      <module fileurl="file://$PROJECT_DIR$/app/motofit-motofit_1-2.4_Beta-app.iml" filepath="$PROJECT_DIR$/app/motofit-motofit_1-2.4_Beta-app.iml" group="motofit-motofit_1-2.4_Beta/app" />
     </modules>
   </component>
 </project>

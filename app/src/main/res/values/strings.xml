@@ -21,7 +21,7 @@
     <string name="hint">Write description in detail. \n \n \n \n</string>
     <string name="location_hint">Get Current Location \n \n \n \n</string>
     <string name="service_title">Register Your Service</string>
-    <string name="gmap_API_key">AIzaSyCnamvbF_WXwvDeGlRdzkwtONlb05VQ8u0</string>
+  <!--string name="gmap_API_key">AIzaSyCnamvbF_WXwvDeGlRdzkwtONlb05VQ8u0</stri-->
     <string name="transitionName">hello</string>
 
 </resources>
