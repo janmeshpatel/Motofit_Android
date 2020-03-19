@@ -165,8 +165,7 @@
                 android:id="@+id/imageButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@android:color/white"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:background="@color/gray"
                 app:srcCompat="@drawable/ic_my_location"
                 tools:ignore="VectorDrawableCompat" />
 
@@ -246,7 +245,8 @@
         android:layout_height="30dp"
         android:visibility="invisible"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="4dp" />
+        tools:layout_editor_absoluteY="4dp"
+        tools:ignore="MissingConstraints" />
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -23,6 +24,7 @@
             tools:ignore="HardcodedText" />
 
         <Spinner
+            android:id="@+id/brand"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -41,10 +43,11 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@color/accentcolor"
-            android:text="Select Your Bike Brand"
+            android:text="Select Your Bike Model"
             tools:ignore="HardcodedText" />
 
         <Spinner
+            android:id="@+id/model"
             android:layout_width="350dp"
             android:prompt="@string/app_name"
             android:layout_height="wrap_content"
@@ -64,15 +67,16 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@color/accentcolor"
-            android:text="Select Your Bike Brand"
+            android:text="Select Doorstep Services"
             tools:ignore="HardcodedText" />
 
         <Spinner
+            android:id="@+id/service_drop"
             android:layout_width="350dp"
-            android:prompt="@string/app_name"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:prompt="@string/app_name" />
     </LinearLayout>
     <LinearLayout
         android:background="@drawable/dgrate"
@@ -87,7 +91,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="@color/accentcolor"
-            android:text="Select Your Bike Brand"
+            android:text="Get Current Location"
             tools:ignore="HardcodedText" />
         <LinearLayout
             android:layout_width="wrap_content"
@@ -99,10 +103,34 @@
             android:layout_height="40dp"
             android:src="@drawable/ic_location"/>
         <EditText
+            android:id="@+id/e1"
             android:layout_marginStart="5dp"
-            android:layout_width="250dp"
-            android:layout_height="40dp">
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:focusableInTouchMode="false"
+            android:editable="false"
+            android:inputType="textMultiLine">
         </EditText>
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="40dp"
+                android:background="@color/gray"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/ic_my_location"
+                tools:ignore="VectorDrawableCompat" />
         </LinearLayout>
+
     </LinearLayout>
+    <Button
+        android:id="@+id/register"
+        android:layout_width="206dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="78dp"
+        android:layout_span="2"
+        android:background="#876854"
+        android:gravity="center"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
 </RelativeLayout>
