@@ -1,8 +1,13 @@
+
 package com.motofit.beta.r1;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -27,11 +32,17 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        coordinatorLayout = findViewById(R.id.coordinator);
+        coordinatorLayout = findViewById(R.id.home_coordinator);
+        //For Check Connection
+        if (!isConnected(home.this)) buildDialog(home.this).show();
+        else {
+            setContentView(R.layout.activity_home);
+        }
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
     }
+
     //Creating Menu Item Option
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,6 +50,7 @@ public class home extends AppCompatActivity {
         inflater.inflate(R.menu.item_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
     // Three Dot Menu Item Action
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -56,8 +68,7 @@ public class home extends AppCompatActivity {
                 editor.apply();
                 break;
             case R.id.exit_action:
-                moveTaskToBack(true);
-                System.exit(1);
+                finishAffinity();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -87,15 +98,16 @@ public class home extends AppCompatActivity {
                             item.setChecked(true);
                             break;
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
+                    if (selectedFragment != null) {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                selectedFragment).commit();
+                    }
                     return false;
                 }
 
             };
 
     boolean doubleBackToExitPressedOnce = false;
-
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
@@ -117,6 +129,37 @@ public class home extends AppCompatActivity {
         }, 2000);
     }
 
+    //Function For Check Internet Connection
+    public boolean isConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netinfo = null;
+        if (cm != null) {
+            netinfo = cm.getActiveNetworkInfo();
+        }
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            if ((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting()))
+                return true;
+            else return false;
+        } else
+            return false;
+    }
+
+    //Alert Dialog for Exiting App
+    public AlertDialog.Builder buildDialog(Context c) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+        builder.setTitle("No Internet Connection");
+        builder.setMessage("You need to have Mobile Data or wifi to access this. Press ok to Exit");
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finishAffinity();
+            }
+        });
+        return builder;
+
+    }
 }
 
 

@@ -14,6 +14,7 @@ public class service_info extends AppCompatActivity {
         ///Toolbar For Going Back
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Information About Service's");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back); // your drawable
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
