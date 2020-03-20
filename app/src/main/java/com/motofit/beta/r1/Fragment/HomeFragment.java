@@ -1,5 +1,6 @@
 package com.motofit.beta.r1.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,14 +13,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.motofit.beta.r1.R;
 
+import java.util.Objects;
+
 public class HomeFragment extends Fragment {
     public HomeFragment(){}
+    @SuppressLint("NewApi")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         ConstraintLayout const_1 = v.findViewById(R.id.constraintLayout_1);
         ConstraintLayout const_2 = v.findViewById(R.id.constraintLayout_2);
+        Objects.requireNonNull(getActivity()).setTitle("How It's Work?");
         final AppCompatActivity activity = (AppCompatActivity) v.getContext();
         //Jump to ServiceFragment
         const_1.setOnClickListener(new View.OnClickListener() {

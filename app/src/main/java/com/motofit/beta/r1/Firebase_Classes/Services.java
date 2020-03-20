@@ -8,9 +8,7 @@ public class Services {
     public String location;
     public String notes;
     public String name;
-
     public Services(){
-
     }
     public Services(String name,String date,String time,String type_service,String odometer,String notes,String location){
         this.name=name;

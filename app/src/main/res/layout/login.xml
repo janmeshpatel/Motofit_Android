@@ -47,6 +47,7 @@
                     android:hint="Email Address"
                     android:textColorHint="#111"
                     android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/googlegans_regular"
                     android:background="#00000000"
                     android:letterSpacing="0.1"
                     android:textSize="16dp"
@@ -74,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
+                    android:fontFamily="@font/googlegans_regular"
                     android:textColorHint="#111"
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"
@@ -107,6 +109,7 @@
             android:text="Login"
             android:textColor="#111"
             android:textStyle="bold"
+            android:fontFamily="@font/googlegans_regular"
             android:gravity="center"
             android:layout_gravity="bottom"
             android:padding="16dp"
@@ -119,6 +122,7 @@
             android:layout_height="25dp"
             android:gravity="center_horizontal"
             android:layout_marginBottom="75dp"
+            android:fontFamily="@font/googlegans_regular"
             android:layout_gravity="center"
             android:letterSpacing="0.1"
             android:text="Create Account ? Signup"
@@ -142,5 +146,6 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
+        android:fontFamily="@font/googlegans_regular"
         android:layout_gravity="bottom" />
 </android.support.design.widget.CoordinatorLayout>

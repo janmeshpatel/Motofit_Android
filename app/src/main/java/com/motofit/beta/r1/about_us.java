@@ -14,6 +14,7 @@ public class about_us extends AppCompatActivity {
         ///Toolbar For Going Back
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("About Us");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back); // your drawable
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

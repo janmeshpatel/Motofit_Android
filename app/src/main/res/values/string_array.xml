@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
     <string-array name="Services">
         <item>Regular Repair</item>
@@ -15,8 +14,7 @@
         <item>5PM - 6PM</item>
     </string-array>
 
-    //fragment motercycle...
-
+    <!--Motor Cycle Fragment Data-->
     <string-array name="doorstep_service">
         <item>Mechanical Repairs</item>
         <item>Collision Repairs</item>
@@ -24,11 +22,10 @@
         <item>Quick Service</item>
         <item>Wheels and Tyers</item>
         <item>Knox</item>
-        <item>Car Care</item>
     </string-array>
 
     <string-array name="company">
-        <item>- SELECT BRAND -</item>
+        <item>-SELECT BRAND-</item>
         <item>Hero Motors</item>
         <item>Honda Motors</item>
         <item>TVS Motors</item>
@@ -139,7 +136,6 @@
         <item>KTM 390 Adventure</item>
         <item>KTM 790 Adve</item>
     </string-array>
-
     <string-array name="piaggio">
         <item>Vespa SXL 150</item>
         <item>Vespa VXl 150</item>
@@ -167,7 +163,6 @@
     </string-array>
 
     <string-array name="select_model">
-        <item>- SELECT BRAND FIRST -</item>
-
+        <item>-SELECT BRAND FIRST-</item>
     </string-array>
 </resources>
