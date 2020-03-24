@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <TableLayout
         android:id="@+id/tableLayout2"
         android:layout_width="400dp"
         android:layout_height="350dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/sharp_dgrate"
-        app:layout_constraintBottom_toTopOf="@+id/register">
+        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <TableRow
             android:layout_width="400dp"
@@ -38,18 +38,22 @@
             <EditText
                 android:id="@+id/et_date"
                 android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:editable="false"
                 android:ems="10"
                 android:focusableInTouchMode="false"
                 android:hint="Date"
-                tools:ignore="HardcodedText" />
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded,TextFields" />
 
             <Spinner
                 android:id="@+id/spinner_time"
                 style="@style/Widget.AppCompat.Spinner.DropDown"
                 android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
                 android:theme="@style/Spinner"
                 tools:ignore="RtlHardcoded" />
         </TableRow>
@@ -148,7 +152,7 @@
                 tools:layout_editor_absoluteY="214dp" />
 
             <EditText
-                android:id="@+id/location"
+                android:id="@+id/usr_location"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_span="2"
@@ -202,28 +206,55 @@
         android:id="@+id/register"
         android:layout_width="206dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/tableLayout2"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="32dp"
+        android:layout_span="2"
         android:background="#876854"
         android:gravity="center"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
         android:text="Register"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="286dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="@string/service_title"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/username"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="invisible" />
+        android:layout_height="30dp"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="4dp" />
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="180dp"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".MainActivity"
+        tools:ignore="MissingConstraints" />
 
-</RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

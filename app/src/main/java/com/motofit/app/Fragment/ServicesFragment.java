@@ -1,4 +1,4 @@
-package com.motofit.beta.r1.Fragment;
+package com.motofit.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -29,49 +29,47 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.motofit.beta.r1.Firebase_Classes.Services;
-import com.motofit.beta.r1.Firebase_Classes.Users;
-import com.motofit.beta.r1.R;
+import com.motofit.app.Firebase_Classes.Services;
+import com.motofit.app.Firebase_Classes.Users;
+import com.motofit.app.R;
+import com.motofit.app.service_info;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.Objects;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class ServicesFragment  extends Fragment {
-    public ServicesFragment(){}
-
-    private EditText et_date,odometer,e4,notes;
+public class ServicesFragment extends Fragment {
+    private EditText et_date, odometer, e4, notes;
     private Button reg_btn;
-    private Spinner s1,sp_time;
+    private Spinner s1, sp_time;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mreference;
     private String userId;
     private CoordinatorLayout coordinatorLayout;
     private TextView username;
 
+    public ServicesFragment() {
+    }
 
-    @SuppressLint({"SetTextI18n", "NewApi"})
+    @SuppressLint("SetTextI18n")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_services, container, false);
-
+        getActivity().setTitle("Book Service");
         //Assign id to Variable's
         et_date = v.findViewById(R.id.et_date);
         sp_time = v.findViewById(R.id.spinner_time);
         s1 = v.findViewById(R.id.spinner);
-        e4 = v.findViewById(R.id.location);
+        e4 = v.findViewById(R.id.usr_location);
         reg_btn = v.findViewById(R.id.register);
         notes = v.findViewById(R.id.notes);
         odometer = v.findViewById(R.id.kilometer);
         username = v.findViewById(R.id.username);
         coordinatorLayout = v.findViewById(R.id.coordinatorLayout);
         ImageButton info_btn = v.findViewById(R.id.info_btn);
-        Objects.requireNonNull(getActivity()).setTitle("Register Your Service");
-
         //Getting user Name
         get_user_data();
         ////Date Picker
@@ -95,13 +93,14 @@ public class ServicesFragment  extends Fragment {
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), com.motofit.beta.r1.service_info.class);
+                Intent i = new Intent(getContext(), service_info.class);
                 startActivity(i);
             }
         });
         return v;
     }
-    private void get_user_data(){
+
+    private void get_user_data() {
         //FireBase Variables
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         DatabaseReference mFirebaseDB = mFirebaseInstance.getReference("Users");
@@ -134,7 +133,8 @@ public class ServicesFragment  extends Fragment {
         });
 
     }
-    private void get_time(){
+
+    private void get_time() {
         //Date Picker Logic
         et_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,7 +162,8 @@ public class ServicesFragment  extends Fragment {
             }
         });
     }
-    private void Firebase_RealTimeDB(){
+
+    private void Firebase_RealTimeDB() {
         ///Register Button Logic
         reg_btn.setOnClickListener(new View.OnClickListener() {
             @Override

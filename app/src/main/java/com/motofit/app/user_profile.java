@@ -1,4 +1,4 @@
-package com.motofit.beta.r1;
+package com.motofit.app;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -22,17 +22,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.motofit.beta.r1.Firebase_Classes.Users;
+import com.motofit.app.Firebase_Classes.Users;
 
 import static android.support.constraint.Constraints.TAG;
 
 public class user_profile extends AppCompatActivity {
-    private DatabaseReference mFirebaseDatabase;
-    private String userId;
     public String Name;
     Button b1;
     TextView t1, t2, t3;
     ProgressBar pb;
+    private DatabaseReference mFirebaseDatabase;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +51,8 @@ public class user_profile extends AppCompatActivity {
         mFirebaseDatabase.keepSynced(true);
         ///Toolbar For Going Back
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("User Profile");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("My Account");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back); // your drawable
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,8 +110,8 @@ public class user_profile extends AppCompatActivity {
                     Log.e(TAG, "User data is changed!" + user.name + ", " + user.email);
                     // Display newly updated name and email
                     t1.setText(user.name);
-                    t2.setText(": " + user.mobnum);
-                    t3.setText(": " + user.email);
+                    t2.setText("Mobile Number : " + user.mobnum);
+                    t3.setText("Email : " + user.email);
                     Name = user.name;
                     pb.setVisibility(View.GONE);
                 }
