@@ -1,4 +1,4 @@
-package com.motofit.beta.r1.Fragment;
+package com.motofit.app.Fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -39,11 +39,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.motofit.beta.r1.Firebase_Classes.Breakdown;
-import com.motofit.beta.r1.Firebase_Classes.Users;
-import com.motofit.beta.r1.R;
+import com.motofit.app.Firebase_Classes.Breakdown;
+import com.motofit.app.Firebase_Classes.Users;
+import com.motofit.app.R;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -51,23 +53,23 @@ import java.util.Objects;
 import static android.support.constraint.Constraints.TAG;
 
 public class MotorcycleFragment extends Fragment {
+    private static final int REQUEST_LOCATION = 1;
     View v;
     private Spinner brand, model, service_drop;
     private LocationManager locationManager;
     private CoordinatorLayout coordinatorLayout;
-    private static final int REQUEST_LOCATION = 1;
     private EditText current_location;
     private DatabaseReference m_reference;
     private String userID;
     private String usrId;
-    private TextView username,usernumber;
+    private TextView username, usernumber;
 
 
-    @SuppressLint("NewApi")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_motorcycle, container, false);
+        getActivity().setTitle("Book BreakDown");
         //TextView for getting user data
         username = v.findViewById(R.id.usr_name);
         usernumber = v.findViewById(R.id.usr_number);
@@ -75,7 +77,6 @@ public class MotorcycleFragment extends Fragment {
         brand = v.findViewById(R.id.brand);
         service_drop = v.findViewById(R.id.service_drop);
         model = v.findViewById(R.id.model);
-        Objects.requireNonNull(getActivity()).setTitle("Book BreakDown");
         //Button
         final ImageButton location_btn = v.findViewById(R.id.imageButton);
         current_location = v.findViewById(R.id.e1);
@@ -195,6 +196,8 @@ public class MotorcycleFragment extends Fragment {
                 String Model = model.getSelectedItem().toString().trim();
                 String Service_drop = service_drop.getSelectedItem().toString().trim();
                 String Location = current_location.getText().toString().trim();
+                Date currentTime = Calendar.getInstance().getTime();
+                String Date_and_Time= currentTime.toString().trim();
                 String Name = username.getText().toString().trim();
                 String Number = usernumber.getText().toString().trim();
                 if (Location.isEmpty()) {
@@ -203,12 +206,14 @@ public class MotorcycleFragment extends Fragment {
                     return;
                 }
                 m_reference = FirebaseDatabase.getInstance().getReference("BreakDown_Service");
-                Breakdown breakdown = new Breakdown(Name,Number,Brand,Model,Service_drop,Location);
+                Breakdown breakdown = new Breakdown(Name ,Number, Model, Brand, Service_drop, Location,Date_and_Time);
                 m_reference.child(userID).push().setValue(breakdown);
                 m_reference.keepSynced(true);
-                Snackbar snackbar = Snackbar.make(coordinatorLayout, "Service Registered.", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, "Booked Breakdown.", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 register.setClickable(false);
+
+
             }
         });
         return v;
@@ -278,13 +283,12 @@ public class MotorcycleFragment extends Fragment {
         alertDialog.show();
     }
 
-    private void user_name(){
+    private void user_name() {
 
         //FireBase Variables
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         DatabaseReference mFirebaseDB = mFirebaseInstance.getReference("Users");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance();
         if (user != null) {
             usrId = user.getUid();
         }

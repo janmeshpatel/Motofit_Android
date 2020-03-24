@@ -9,6 +9,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="187dp"
+            android:layout_height="31dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="100dp"
+            android:gravity="center"
+            android:text="How it's Works?"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout_1"
             android:layout_width="350dp"
@@ -35,7 +54,6 @@
                 android:layout_width="280dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/googlegans_regular"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:inputType="textMultiLine"
@@ -43,8 +61,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
-                tools:ignore="HardcodedText,TextViewEdits" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -63,7 +80,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/googlegans_regular"
                 android:layout_marginBottom="2dp"
                 android:text="Book Your Service"
                 android:textSize="18sp"
@@ -71,8 +87,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                tools:ignore="HardcodedText" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
@@ -98,7 +113,6 @@
                 android:layout_width="280dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="2dp"
-                android:fontFamily="@font/googlegans_regular"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:inputType="textMultiLine"
@@ -106,8 +120,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8"
-                tools:ignore="HardcodedText,TextViewEdits" />
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -127,15 +140,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="1dp"
-                android:fontFamily="@font/googlegans_regular"
                 android:text="Pick Up From Your Location"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textView9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                tools:ignore="HardcodedText" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
@@ -172,7 +183,6 @@
                 android:layout_width="320dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="1dp"
-                android:fontFamily="@font/googlegans_regular"
                 android:gravity="center"
                 android:inputType="textMultiLine"
                 android:text="Our expert team will fix every problem diagnosed and make your vehicle ready for roads again."
@@ -180,8 +190,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text5"
-                tools:ignore="HardcodedText,TextViewEdits" />
+                app:layout_constraintTop_toBottomOf="@+id/text5" />
 
             <TextView
                 android:id="@+id/text5"
@@ -190,14 +199,12 @@
                 android:layout_marginTop="1dp"
                 android:text="Problem Diagnose"
                 android:textSize="18sp"
-                android:fontFamily="@font/googlegans_regular"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/text7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imagw6"
-                tools:ignore="HardcodedText" />
+                app:layout_constraintTop_toBottomOf="@+id/imagw6" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -236,7 +243,6 @@
             <TextView
                 android:id="@+id/textview7"
                 android:layout_width="320dp"
-                android:fontFamily="@font/googlegans_regular"
                 android:layout_height="52dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="-5dp"
@@ -255,7 +261,6 @@
                 android:layout_height="wrap_content"
                 android:text="Drop Vehicle"
                 android:textSize="18sp"
-                android:fontFamily="@font/googlegans_regular"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/text7"
                 app:layout_constraintEnd_toEndOf="parent"
