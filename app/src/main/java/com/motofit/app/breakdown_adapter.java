@@ -14,12 +14,12 @@ import com.motofit.app.Firebase_Classes.Breakdown;
 
 import java.util.List;
 
-public class Adapters extends ArrayAdapter<Breakdown> {
+public class breakdown_adapter extends ArrayAdapter<Breakdown> {
     private Activity context;
     private List<Breakdown> breakdownList;
 
-    public Adapters(Activity context, List<Breakdown> breakdownList) {
-        super(context, R.layout.history_list_layout, breakdownList);
+    public breakdown_adapter(Activity context, List<Breakdown> breakdownList) {
+        super(context, R.layout.breakdown_list_layout, breakdownList);
         this.context = context;
         this.breakdownList = breakdownList;
     }
@@ -27,14 +27,14 @@ public class Adapters extends ArrayAdapter<Breakdown> {
     @NonNull
     @Override
     @SuppressLint("ViewHolder")
-    public View getView(int position,@Nullable View convertView,@NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View listviewItem = inflater.inflate(R.layout.history_list_layout,null,true);
-        TextView location = listviewItem.findViewById(R.id.usr_location);
-        TextView time = listviewItem.findViewById(R.id.time);
-        TextView break_type = listviewItem.findViewById(R.id.break_type);
-        TextView brand = listviewItem.findViewById(R.id.bike_brand);
-        TextView model = listviewItem.findViewById(R.id.bike_model);
+        @SuppressLint("InflateParams") View listview_Item = inflater.inflate(R.layout.breakdown_list_layout, null, true);
+        TextView location = listview_Item.findViewById(R.id.usr_location);
+        TextView time = listview_Item.findViewById(R.id.time);
+        TextView break_type = listview_Item.findViewById(R.id.break_type);
+        TextView brand = listview_Item.findViewById(R.id.bike_brand);
+        TextView model = listview_Item.findViewById(R.id.bike_model);
 
         Breakdown breakdown = breakdownList.get(position);
         location.setText(breakdown.Location);
@@ -42,7 +42,7 @@ public class Adapters extends ArrayAdapter<Breakdown> {
         brand.setText(breakdown.Brand);
         model.setText(breakdown.Model);
         break_type.setText(breakdown.Dropdown_service);
-        return listviewItem;
+        return listview_Item;
 
 
     }

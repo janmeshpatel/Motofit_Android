@@ -4,32 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.motofit.app.r1.com.motofit.app.history">
+    tools:context="com.motofit.app.history">
 
     <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/tb"
+        layout="@layout/toolbar_2"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_below="@id/toolbar"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/accentcolor"
-        android:progress="25"
-        android:scrollbarStyle="outsideOverlay"
-        android:visibility="gone"
-        tools:ignore="UnusedAttribute" />
-
-    <ListView
-        android:id="@+id/dropdown_history_list"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- our tablayout to display tabs  -->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb"
+        android:minHeight="?actionBarSize"
+        app:tabBackground="@color/accentcolor"
+        app:tabIndicatorColor="@color/white"
+        app:tabTextColor="@color/white" />
+
+    <!-- View pager to swipe views -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout"
+        app:tabBackground="@color/accentcolor" />
+
 
 </RelativeLayout>
